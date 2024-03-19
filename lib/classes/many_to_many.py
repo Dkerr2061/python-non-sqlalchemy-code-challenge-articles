@@ -35,12 +35,9 @@ class Article:
         
 class Author:
 
-    all = []
-
     def __init__(self, name):
         self.name = name
 
-        Author.all.append(self)
 
     @property
     def name(self):
@@ -70,13 +67,10 @@ class Author:
 
 class Magazine:
 
-    all = []
-
     def __init__(self, name, category):
         self.name = name
         self.category = category
 
-        Magazine.all.append(self)
 
     @property
     def name(self):
