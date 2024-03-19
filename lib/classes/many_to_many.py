@@ -55,6 +55,7 @@ class Author:
 
     def magazines(self):
         return list(set([article.magazine for article in Article.all if article.author == self]))
+        # return list(set([article.magazine for article in self.articles()])) {This is the shorter way to solve this problem, it calls the articles() function and returns the information that the ( Article.all if article.author == self ) provides.}
     
     def add_article(self, magazine, title):
         return Article(self, magazine, title)        
@@ -98,6 +99,7 @@ class Magazine:
 
     def contributors(self):
         return list(set([article.author for article in self.articles()]))
+        # return list(set([article.author for article in Article.all if article.magazine == self])) {This is a different way to get the same result. The other solution used to solve this problem is a bit cleaner since it uses the result of the articles() function to provide the data for the ( Article.all if article.magazine == self )}
 
     def article_titles(self):
         if(len(self.articles()) == 0):
